@@ -19,7 +19,7 @@
       <dt>Actor</dt>
       <dd>
         <% if @character.actor != nil %>  <!-- alternatively, you could write `if movie.director.present?` -->
-        <a href="/movies/<%= @character.actor_id %>">
+        <a href="/actors/<%= @character.actor_id %>">
         <%= @character.actor.name %>
         <% else %>
         No actor selected
