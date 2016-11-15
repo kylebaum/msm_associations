@@ -6,8 +6,7 @@
 </div>
 
 <div class="row">
-  <div cla
-  ss="col-md-12">
+  <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
         <th>Movie</th>
@@ -18,9 +17,9 @@
 
       <% @characters.each do |character| %>
       <tr>
-        <td> <%= character.movie.title %></td>
+        <td> <%= Movie.find_by(:id => character.movie_id).title %></td>
 
-        <td><%= character.actor.name %></td>
+        <td><%= Actor.find_by(:id => character.actor_id).name %></td>
 
         <td><%= character.name %></td>
         <td>

@@ -27,7 +27,7 @@
       </a>
 
       <dt>Number of characters</dt>
-      <dd><%= @movie.characters.count %></dd>
+      <dd><%= Character.where(:movie_id => @movie.id).count %></dd>
     </dl>
 
     <div class="btn-group btn-group-justified">
