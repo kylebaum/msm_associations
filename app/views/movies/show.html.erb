@@ -18,12 +18,17 @@
       <dd><%= @movie.description %></dd>
 
       <dt>Image url</dt>
-      <dd><%= @movie.image_url %></dd>
+      <dd><img src="<%= @movie.image_url %>" alt="" /></dd>
 
       <dt>Director</dt>
       <dd>
-        <a href="/directors/<%= @movie.director_id %>">
-        <%= @movie.director.name %></dd>
+          <% if @movie.director != nil %>  <!-- alternatively, you could write `if movie.director.present?` -->
+          <a href="/directors/<%= @movie.director_id %>">
+    <%= @movie.director.name %>
+  <% else %>
+    No director selected
+  <% end %>
+        </dd>
       </a>
 
       <dt>Number of characters</dt>

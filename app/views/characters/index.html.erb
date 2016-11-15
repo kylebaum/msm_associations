@@ -18,9 +18,19 @@
 
       <% @characters.each do |character| %>
       <tr>
-        <td> <%= character.movie.title %></td>
 
-        <td><%= character.actor.name %></td>
+
+        <td> <% if character.movie != nil %>  <!-- alternatively, you could write `if movie.director.present?` -->
+  <%= character.movie.title %>
+<% else %>
+  No title selected
+<% end %></td>
+
+        <td> <% if character.actor != nil %>  <!-- alternatively, you could write `if movie.director.present?` -->
+  <%= character.actor.name %>
+<% else %>
+  No actor selected
+<% end %></td>
 
         <td><%= character.name %></td>
         <td>

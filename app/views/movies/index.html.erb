@@ -27,7 +27,12 @@
         <td><%= movie.year %></td>
         <td><%= movie.duration %></td>
         <td><%= movie.description %></td>
-        <td><%= movie.director.name %></td>
+        <td><% if movie.director != nil %>  <!-- alternatively, you could write `if movie.director.present?` -->
+  <%= movie.director.name %>
+<% else %>
+  No director selected
+<% end %>
+        </td>
         <td>
           <a href="/movies/<%= movie.id %>" class="btn btn-primary">Show</a>
           <a href="/movies/<%= movie.id %>/edit" class="btn btn-warning">Edit</a>
